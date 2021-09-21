@@ -1,0 +1,50 @@
+<header class=contenedor01>
+  <div class="logo">
+    <a href="/">
+      <img id="your" width="250" height="55" src='/img/your-logo.png' alt='Imagen de logo'></img></a>
+  </div>
+  <div class="presentacion">
+    <div class="botones">
+      <a href="/quienesSomos" class="boton1">
+        <button class="sub-boton">QUIENES SOMOS
+        </button>
+      </a>
+    </div>
+    <div class="botones">
+      <a href="/products/producto" class="boton2">
+        <button class="sub-boton">PRODUCTOS
+        </button>
+      </a>
+    </div>
+    <% if (locals.isLogged) { %>
+      <div class="botones">
+        <a href="/users/logout" class="boton5">
+          <button class="sub-boton">CERRAR SESION
+          </button>
+        </a>
+      </div>
+      <div class="botones">
+        <a href="/users/profileUser" class="boton6">
+          <button class="sub-boton">MI PERFIL
+          </button>
+        </a>
+      </div>
+      <% } else { %>
+        <div class="botones">
+          <a href="/users/login" class="boton3">
+            <button class="sub-boton">INICIAR SESION
+            </button>
+          </a>
+        </div>
+        <div class="botones">
+          <a href="/users/registro" class="boton4">
+            <button class="sub-boton">REGISTRATE
+            </button>
+          </a>
+        </div>
+        <% } %>
+  </div>
+  <div class="telefono">
+    <img id="whatsapp" width="30" height="30" src='/img/whatsapp.png' alt='Imagen de whatsapp'></img>
+  </div>
+</header>

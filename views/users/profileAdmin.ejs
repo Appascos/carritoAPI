@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YoTeMudo Carga de Producto</title>
+    <!-- Fuentes de Google-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+
+    <!--    Font awesome  -->
+    <script src="https://kit.fontawesome.com/29db22af69.js" crossorigin="anonymous"></script>
+
+    <!-- Enlace con CCS-->
+    <link rel="stylesheet" href="/css/indexNormalize.css">
+    <link rel="stylesheet" href="/css/profileStyles.css">
+</head>
+
+<body>
+
+    <%- include('../partials/header') %>
+        <main class="profile_main">
+            <div class="profile_container">
+                <div class="profile_title">
+                    <h2 class="profile_logo">Perfil de <span class="profile_logo2">
+                            <%= user.nombre %>
+                        </span></h2>
+                </div>
+                <div class="profile_box">
+                    <div class="profile_center_logo">
+                        <img class="profile_icono_login" src="/img/img_users/<%=user.imagen %> "> </img>
+                        <h1> Datos del Administrador </h1>
+                    </div>
+
+                    <div class="profile_datos">
+                        <div class="profile_group_info">
+                            <p> Nombre: </p>
+                            <p class="profile_info">
+                                <%=user.nombre%>
+                            </p>
+                        </div>
+
+                        <div class="profile_group_info">
+                            <p> Apellido: </p>
+                            <p class="profile_info">
+                                <%=user.apellido %>
+                            </p>
+                        </div>
+
+                        <div class="profile_group_info">
+                            <p> E-mail: </p>
+                            <p class="profile_info">
+                                <%=user.email %>
+                            </p>
+                        </div>
+
+                        <div class="profile_group_info">
+                            <p> Teléfono: </p>
+                            <p class="profile_info">
+                                <%=user.telefono %>
+                            </p>
+                        </div>
+
+                        <div class="profile_group_info">
+                            <p> Contraseña: </p>
+                            <p class="profile_info"> V******* </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile_admin_tools_grandBox">
+                    <div>
+                        <h1> Herramientas</h1>
+                    </div>
+                    <div class="profile_general_tools">
+                        <div class="profile_center">
+                            <!-- <form method="get" action=""> -->
+                            <a href="/products/producto">
+                                <button type="submit">EDITAR PACK</button></form>
+                            </a>
+                        </div>
+                        <div class="profile_center">
+                            <a href="/products/cargaProducto">
+                                <button type="submit">CREAR NUEVO PACK</button></a>
+                        </div>
+                        <div class="profile_center">
+                            <a href="/products/producto">
+                                <button type="submit">ELIMINAR PACK</button>
+                            </a>
+                        </div>
+                        <div class="profile_center">
+                            <button type="submit">EDITAR "QUIENES SOMOS"</button>
+                        </div>
+                        <!-- <div class="profile_center">
+                            <button type="submit">ELIMINAR USUARIO</button>
+                        </div>                       
+                        <div class="profile_center">
+                            <button type="submit">EDITAR USUARIO</button>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <footer class="profile_footer">
+            <%- include('../partials/footer') %>
+        </footer>
+
+
+</body>
+
+</html>

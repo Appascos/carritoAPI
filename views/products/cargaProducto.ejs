@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoTeMudo Carga de Producto</title>
+    <!-- Fuentes de Google-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+
+    <!--    Font awesome  -->
+    <script src="https://kit.fontawesome.com/29db22af69.js" crossorigin="anonymous"></script>
+
+    <!-- Enlace con CCS-->
+    <link rel="stylesheet" href="/css/indexNormalize.css">
+    <link rel="stylesheet" href="/css/carga-edicion.css">
+
+    <!-- Enlace con js en el Front-->
+    <script src="/scripts/js_CargaProdFront.js"></script>
+
+</head>
+
+<body>
+
+    <%- include('../partials/header') %>
+        <!-- <header>
+            <div class="logoyotemudo"><a href="/">
+                <img id= "your" width="250" height="55" src= '/img/your-logo.png'alt= 'Imagen de logo'></img>
+            </a>
+            </div>
+        </header> -->
+        <main>
+            <div class="content">
+                <h2 class="logo">Carga de <span class="logo2"> nuevo Pack </span></h2>
+                <div class="formulario_entero">
+                    <div class="formulario_de_carga_edicion">
+                        <h1> Datos del Servicio </h1>
+                        <form name="cargaProducto" method="POST" action="cargaProducto" enctype="multipart/form-data"
+                            class="cargaFront-js">
+                            <p>
+                                <label for="numeros">N° de Pack
+                                    <input required class='numeroPack' type="text" name="numeroDePack" id='numeros'>
+                                </label>
+                            </p>
+                            <p>
+                                <label for="texto">Radio en Km
+                                    <input required class='km' type="text" name="radio" id='texto'>
+                                </label>
+                            </p>
+                            <p>
+                                <label for="precio">Precio
+                                    <input required class='precio' type="text" name="precio" id='precio'>
+                                </label>
+                            </p>
+                            <p>
+                                <label for="medidas">Medidas
+                                    <input required class='medida' type="texto" name="medidas" id='medidas'>
+                                </label>
+                            </p>
+                            <p>
+                                <label for="imagenProducto" class="form-label">Imagen
+                                    <input class="imagenProducto" type="file" name="imagenProducto" id="imagenProducto">
+                                </label>
+                            </p>
+
+
+                            <div class="erroresEdit">
+                                <ul></ul>
+                            </div>
+
+                            <button type="submit">ENVIAR</button>
+
+
+                        </form>
+                    </div>
+                    <div class="formulario_de_info">
+                        <div class="packUnitario">
+                            <img src="/img/products/flota-00_2.jpg" alt="Camion Mudanza 1" class="imagenCamion">
+                            <h3>PACK ?</h3>
+                            <span>Radio ?? km </span> <br>
+                            <span>?? Mts2 </span> <br>
+                            <span>Precio </span> <br>
+                            <!-- <span>Medidas </span> <br> -->
+                            <span><a href="/carrito"><img src="/img/carrito1.png" alt="" class="btn-precio "></a></span>
+                        </div>
+                    </div>
+                </div>
+        </main>
+
+        <%- include('../partials/footer') %>
+
+</body>
+
+</html>

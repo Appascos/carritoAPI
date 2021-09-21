@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- <%- include('../partials/head') %>  -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoTeMudo Carga de Producto</title>
+    <!-- Fuentes de Google-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+
+    <!--    Font awesome  -->
+    <script src="https://kit.fontawesome.com/29db22af69.js" crossorigin="anonymous"></script>
+
+    <!-- Enlace con CCS-->
+    <link rel="stylesheet" href="/css/indexNormalize.css">
+    <link rel="stylesheet" href="/css/carga-edicion.css">
+
+    <!-- Enlace con js en el Front-->
+    <script src="/scripts/js_EditProdFront.js"></script>
+
+</head>
+
+<body>
+
+    <%- include('../partials/header') %>
+        <main>
+            <div class="content">
+                <h2 class="logo">Edición de <span class="logo2">Pack <%=productoEncontrado.numeroDePack%> </span></h2>
+                <div class="formulario_entero">
+                    <div class="formulario_de_carga_edicion">
+                        <h1> Datos del Servicio </h1>
+
+                        <form name="edicionProducto" method="POST"
+                            action="/products/edicionProducto/<%=productoEncontrado.id%>?_method=PUT" method="POST"
+                            enctype="multipart/form-data" class="editFront-js">
+                            <p>
+                                <label for="numeroDePack">N° de Pack
+                                    <input required class='numeroPack' type="text" name="numeroPack" id='numeroDePack'
+                                        placeholder="<%=productoEncontrado.numeroDePack%>"
+                                        value="<%=productoEncontrado.numeroPack%>">
+                                </label>
+                            </p>
+                            <p>
+                                <label for="radio">Radio en Km
+                                    <input required class='km' type="text" name="radio" id='radio'
+                                        placeholder="<%=productoEncontrado.radio%>"
+                                        value="<%=productoEncontrado.radio%>">
+                                </label>
+                            </p>
+                            <p>
+                                <label for="precio">Precio
+                                    <input required class='precio' type="text" name="precio" id='precio'
+                                        placeholder="<%=productoEncontrado.precio%>"
+                                        value="<%=productoEncontrado.precio%>">
+                                </label>
+                            </p>
+                            <p>
+                                <label for="superficie">Medidas
+                                    <input required class='medida' type="texto" name="superficie" id='superficie'
+                                        placeholder="<%=productoEncontrado.superficie%>"
+                                        value="<%=productoEncontrado.superficie%>">
+                                </label>
+                            </p>
+                            <p>
+                                <label for="imagenProducto" class="form-label">Imagen
+                                    <input class="imagenProducto" type="file" name="imagenProducto" id='imagenProducto'>
+                                </label>
+                            </p>
+
+                            <div class="erroresEdit">
+                                <ul></ul>
+                            </div>
+
+                            <button type="submit">ENVIAR</button>
+
+
+
+                        </form>
+                    </div>
+                    <div class="formulario_de_info">
+                        <div class="packUnitario">
+                            <img src="/img/camiones/<%=productoEncontrado.imagen%>" alt="Camion Mudanza 1"
+                                class="imagenCamion">
+                            <h3>Pack N° <%=productoEncontrado.numeroPack%>
+                            </h3>
+                            <span>Radio <%=productoEncontrado.radio%> km </span> <br>
+                            <span>
+                                <%=productoEncontrado.superficie%> Mts2
+                            </span> <br>
+                            <span>$<%=productoEncontrado.precio%></span> <br>
+                            <!-- <span>Medidas </span> <br> -->
+                            <span><a href="/carrito"><img src="/img/carrito1.png" alt="" class="btn-precio "></a></span>
+                        </div>
+                    </div>
+                </div>
+        </main>
+
+        <%- include('../partials/footer') %>
+
+</body>
+
+</html>

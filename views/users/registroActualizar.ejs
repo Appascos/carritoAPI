@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoTeMudo Registro</title>
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+
+    <!--    Font awesome  -->
+    <script src="https://kit.fontawesome.com/29db22af69.js" crossorigin="anonymous"></script>
+
+    <!-- Enlace con CCS-->
+    <link rel="stylesheet" href="/css/indexNormalize.css">
+    <link rel="stylesheet" href="/css/registroStyles.css">
+</head>
+
+<body>
+
+    <%- include('../partials/header') %>
+        <!-- <header>
+            <div class="logoyotemudo"><a href="/">
+                <img id= "your" width="250" height="55" src= '/img/your-logo.png'alt= 'Imagen de logo'></img>
+            </a>
+            </div>
+        </header> -->
+        <div class="content">
+            <h2 class="logo">Actualizacion de <span class="logo2"> Registro </span></h2>
+            <div class="formulario_entero">
+                <div class="formulario_de_contacto_gral">
+                    <h1> Datos de usuario </h1>
+                    <form name="edicionUsuario" method='POST'
+                        action="/users/registroActualizar/<%=usuarioEncontrado.id%>?_method=PUT"
+                        enctype="multipart/form-data">
+                        <div class="datos">
+                            <div class="datos_de_contacto">
+                                <div class="cajaDato">
+                                    <label for="nombre">NOMBRE </label>
+                                    <input type="text" name="nombre" id="nombre"
+                                        placeholder="<%=usuarioEncontrado.nombre %> "
+                                        value="<%=usuarioEncontrado.nombre %>%>">
+                                    <% if (locals.errors && errors.nombre) { %>
+                                        <div class="classeError">
+                                            <%=errors.nombre.msg %>
+                                        </div>
+                                        <% } %>
+                                </div>
+                                <div class="cajaDato">
+                                    <label for="apellido">APELLIDO</label>
+                                    <input type="text" name="apellido" id="apellido"
+                                        placeholder="<%=usuarioEncontrado.apellido %> "
+                                        value="<%=usuarioEncontrado.apellido %>">
+                                    <% if (locals.errors && errors.apellido) { %>
+                                        <div class="classeError">
+                                            <%=errors.apellido.msg %>
+                                        </div>
+                                        <% } %>
+                                </div>
+                                <div class="cajaDato">
+                                    <label for="usuario">USUARIO</label>
+                                    <input type="text" name="usuario" id="usuario"
+                                        placeholder="<%=usuarioEncontrado.usuario %> "
+                                        value="<%=usuarioEncontrado.usuario %>">
+                                    <% if (locals.errors && errors.usuario) { %>
+                                        <div class="classeError">
+                                            <%=errors.usuario.msg %>
+                                        </div>
+                                        <% } %>
+                                </div>
+                                <div class="cajaDato">
+                                    <label for="email">E-MAIL</label>
+                                    <input type="text" name="email" id="email"
+                                        placeholder="<%=usuarioEncontrado.email %> "
+                                        value="<%=usuarioEncontrado.email %>">
+                                    <% if (locals.errors && errors.email) { %>
+                                        <div class="classeError">
+                                            <%=errors.email.msg %>
+                                        </div>
+                                        <% } %>
+                                </div>
+                                <div class="cajaDato">
+                                    <label for="telefono">TELEFONO</label>
+                                    <input type="tel" name="telefono" id="telefono"
+                                        placeholder="<%=usuarioEncontrado.telefono %> "
+                                        value="<%=usuarioEncontrado.telefono %>">
+                                    <% if (locals.errors && errors.telefono) { %>
+                                        <div class="classeError">
+                                            <%=errors.telefono.msg %>
+                                        </div>
+                                        <% } %>
+                                </div>
+                                <div class="cajaDato">
+                                    <label for="domicilio">DOMICILIO</label>
+                                    <input type="text" name="domicilio" id="domicilio"
+                                        placeholder="<%=usuarioEncontrado.domicilio %> "
+                                        value="<%=usuarioEncontrado.domicilio %>">
+                                    <% if (locals.errors && errors.domicilio) { %>
+                                        <div class="classeError">
+                                            <%=errors.domicilio.msg %>
+                                        </div>
+                                        <% } %>
+                                </div>
+                                <div class="cajaDato">
+                                    <label for="localidad">LOCALIDAD</label>
+                                    <input type="text" name="localidad" id="localidad"
+                                        placeholder="<%=usuarioEncontrado.localidad %> "
+                                        value="<%=usuarioEncontrado.localidad %>">
+                                    <% if (locals.errors && errors.localidad) { %>
+                                        <div class="classeError">
+                                            <%=errors.localidad.msg %>
+                                        </div>
+                                        <% } %>
+                                </div>
+
+                                <div class="cajaDato">
+                                    <label for="claveUsuario">CONTRASEÑA</label>
+                                    <input type="password" name="claveUsuario" id="claveUsuario" placeholder="***"
+                                        value="<%=locals.oldData?oldData.claveUsuario:""%>">
+                                    <% if (locals.errors && errors.claveUsuario) { %>
+                                        <div class="classeError">
+                                            <%=errors.claveUsuario.msg %>
+                                        </div>
+                                        <% } %>
+                                </div>
+
+                                <div class="cajaDato">
+                                    <label for="fotoDePerfil">FOTO DE PERFIL</label>
+                                    <input type="file" name="fotoDePerfil" id="fotoDePerfil">
+                                    <% if (locals.errors && errors.fotoDePerfil) { %>
+                                        <div class="classeError">
+                                            <%=errors.fotoDePerfil.msg%>
+                                        </div>
+                                        <% } %>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit">ENVIAR</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="formulario_de_info">
+                    <h4>SOBRE NOSOTROS</h4>
+                    <ul>
+                        <li> <i class="fas fa-map-marker-alt"> Juan Agustin Lorca 24</i> </li>
+                        <li> <i class="fas fa-phone-"> 011 4682 9857</i></li>
+                        <li> <i class="fas fa-envelope"> contacto@yotemudo.com</i></li>
+                    </ul>
+                    <p>
+                        Desde hace más 10 años que YoTeMudo.com esta con vos, somos EXPERTOS EN MUDANZAS.
+                    </p>
+                    <p>
+                        YoTeMudo.com
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <%- include('../partials/footer') %>
+            <!-- <footer class="footer">
+        <div class="redesSocialesFooter">
+          
+          <div class ="rrss"><img src="/img/facebook.png" class="logoFacebook"/></div>
+          <div class="rrss"><img src="/img/twitter.png" class="logoTwitter"/></div>
+          <div class="rrss"><img src="/img/linkedin.png" class="logoFacebook"/></div>  
+        </div>  
+      </footer> -->
+</body>
+
+</html>
